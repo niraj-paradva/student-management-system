@@ -7,7 +7,7 @@
                      </li>
                      
                      <li class="submenu active">
-                        <a href=""><i class="fas fa-user-graduate"></i> <span> Dashboard</span></a>
+                        <a href="index.php"><i class="fas fa-chart-bar"></i><span>Dashboard</span></a>
                      </li> 
                      
                      <li class="submenu">
@@ -21,27 +21,28 @@
                      </li>
                      
                      <li class="submenu">
-                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> faculty</span> <span class="menu-arrow"></span></a>
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span>Faculty</span> <span class="menu-arrow"></span></a>
                         <ul>
-                           <li><a href="teachers.php">faculty List</a></li>
-                           <li><a href="teacher-details.php">faculty View</a></li>
-                           <li><a href="add-teacher.php">faculty Add</a></li>
-                           <li><a href="edit-teacher.php">faculty Edit</a></li>
+                           <li><a href="teachers.php">Faculty List</a></li>
+                           <li><a href="teacher-details.php">Faculty View</a></li>
+                           <li><a href="add-teacher.php">Faculty Add</a></li>
+                           <li><a href="edit-teacher.php">Faculty Edit</a></li>
                         </ul>
                      </li>
                      <li class="submenu">
-                        <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span class="menu-arrow"></span></a>
+                        <a href="#"><i class="fas fa-book"></i> <span>Subjects</span> <span class="menu-arrow"></span></a>
                         <ul>
-                           <li><a href="departments.php">Department List</a></li>
-                           <li><a href="add-department.php">Department Add</a></li>
-                           <li><a href="edit-department.php">Department Edit</a></li>
+                           <li><a href="subjects.php">Subject List</a></li>
+                           <li><a href="subject-view.php">Subject View</a></li>
+                           <li><a href="add-subject.php">Subject Add</a></li>
+                           <li><a href="edit-subject.php">Subject Edit</a></li>
                         </ul>
                      </li>
                      
 
                      <!-- new feture for fee -->
                      <li class="menu-title">
-                        <span>fee Management</span>
+                        <span>Management</span>
                      </li>
                      <li class="submenu">
                         <a href="#"><i class="fas fa-file-invoice-dollar"></i> <span> Accounts</span> <span class="menu-arrow"></span></a>

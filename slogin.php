@@ -1,33 +1,3 @@
-<?php
-
-@include 'config.php';
-session_start();
-if(isset($_POST['submit']))
-{
-   $aemail = $_POST['email'];
-   $aemail = filter_var($aemail,FILTER_SANITIZE_STRING);
-   $pass = $_POST['password'];
-   $pass = filter_var($pass,FILTER_SANITIZE_STRING);
-
-   $qry = "SELECT * FROM admin where aemail='$aemail' AND apass='$pass'";
-   $sel = mysqli_query($conn,$qry);
-
-   $arr = mysqli_fetch_array($sel);
-   $rcnt = mysqli_num_rows($sel);
-
-   if($rcnt > 0)
-   {
-      $_SESSION['user'] = $aemail;
-      header('Location:index.php');
-   }
-   else
-   {
-      echo "NOT FOUND";
-   }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
    <!-- Mirrored from preschool.dreamguystech.com/html-template/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
@@ -56,20 +26,20 @@ if(isset($_POST['submit']))
                         <p class="account-subtitle">Access to our dashboard</p>
                         <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
-                              <li class="breadcrumb-item active" aria-current="page"><a href="#">Admin</a></li>
+                              <li class="breadcrumb-item"><a href="login.php">Admin</a></li>
                               <li class="breadcrumb-item"><a href="tlogin.php">Teacher</a></li>
-                              <li class="breadcrumb-item"><a href="slogin.php">Student</a></li>
+                              <li class="breadcrumb-item active" aria-current="page"><a href="#">Student</a></li>
                            </ol>
                         </nav>
                         <form action="#" method="POST">
                            <div class="form-group">
-                              <input class="form-control" type="email" placeholder="Email" name="email" required>
+                              <input class="form-control" type="email" placeholder="Email" name="mail" required>
                            </div>
                            <div class="form-group">
-                              <input class="form-control" type="text" placeholder="Password" name="password" required>
+                              <input class="form-control" type="text" placeholder="Password" nmae="password" required>
                            </div>
                            <div class="form-group">
-                              <button class="btn btn-primary btn-block" type="submit" name="submit">Login</button>
+                              <button class="btn btn-primary btn-block" type="submit">Login</button>
                            </div>
                         </form>
                         <div class="text-center forgotpass"><a href="forgot-password.php">Forgot Password?</a></div>

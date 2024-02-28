@@ -102,8 +102,8 @@
                            <img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
-                           <h6>Ryan Taylor</h6>
-                           <p class="text-muted mb-0">Administrator</p>
+                           <h6><?php echo $arr['afname']." ".$arr['alname'];;?></h6>
+                           <p class="text-muted mb-0">HOD</p>
                         </div>
                      </div>
                      <a class="dropdown-item" href="profile.php">My Profile</a>

@@ -1,10 +1,33 @@
+<?php
+
+@include 'config.php';
+session_start();
+
+$aemail = $_SESSION['user'];
+
+if(isset($aemail))
+{
+   $qry = "SELECT * FROM admin where aemail='$aemail'";
+   $sel = mysqli_query($conn,$qry);
+
+   $arr = mysqli_fetch_array($sel);
+}
+else
+{
+   header('Location:login.php');
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
    
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-      <title>Preskool - Dashboard</title>
+      <title>OAK - Dashboard</title>
       <link rel="shortcut icon" href="assets/img/favicon.png">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap">
       <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
@@ -26,7 +49,7 @@
                <div class="page-header">
                   <div class="row">
                      <div class="col-sm-12">
-                        <h3 class="page-title">Welcome Admin!</h3>
+                        <h3 class="page-title">Welcome back <span><?php echo $arr['afname'];?></span>!</h3>
                         <ul class="breadcrumb">
                            <li class="breadcrumb-item active">Dashboard</li>
                         </ul>
