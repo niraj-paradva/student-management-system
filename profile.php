@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Mirrored from preschool.dreamguystech.com/html-template/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:38 GMT -->
+   
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -38,60 +38,86 @@
     
   	<hr>
 	<div class="row">
+  <?php
+            include 'connection.php';
+
+            $sql="SELECT * FROM admin";
+            $result = mysqli_query($conn,$sql);
+            // if($result)
+            // {
+              foreach($result as $r)
+              {
+                  $fname=$r['afname'];
+                  $lname=$r['alname'];
+                  $mail=$r['aemail'];
+                  $pass=$r['apass'];
+                  $img=$r['image'];
+              }
+            // // }
+            // else{
+            //   echo "<script>alert ('no')</script>";
+            // }
+          ?>
+
+      
       <!-- left column -->
-      <div class="col-md-3">
+      
+        <div class="col-md-3">
+        <form action="#" enctype="multipart/form-data" method="post">
         <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
-          
-          <input type="file" class="form-control">
+            <img src="<?php echo $img ?>" class="avatar img-circle" alt="avatar">
+            <h6>Upload a different photo...</h6>
+            
+            <input type="file" name="img" class="form-control"><br>
+            <input type="submit" class="btn btn-primary" value="change" id="saveimg" name="saveimg">
+          </div>
+          </form>
         </div>
-      </div>
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         
         <h3>Personal info</h3>
-        
-        <form class="form-horizontal" role="form">
+          
+        <form class="form-horizontal" role="form" action="#" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+              <input class="form-control" type="text" name="fname" value="<?php echo $fname ?>" require>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
+              <input class="form-control" type="text" value="<?php echo $lname?>" name="lname" require>
             </div>
           </div>
          
           <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
+            <label class="col-lg-8 control-label">Email:  &nbsp<b style="color:red; font-size:10px;">if you change e-mail please re-login on dashboard</b></label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="text" value="<?php echo $mail ?>" name="email" require>
             </div>
           </div>
           
           <div class="form-group">
-            <label class="col-md-3 control-label">Password:</label>
+            <label class="col-md-8 control-label">Password: &nbsp<b style="color:red; font-size:10px;">change only you want to change password</b></label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" value="<?php echo $pass ?>" onKeyUp="checkpass()" name="pass" id="pass" require>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" value="<?php echo $pass ?>" name="cpass" onKeyUp="checkpass()" id="cpass" require>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="submit" class="btn btn-primary" value="Save Changes" id="btn" name="save">
               <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
+              
             </div>
           </div>
         </form>
@@ -100,12 +126,77 @@
 </div>
 <hr>
 
-      </div>   
+      </div> 
+      <script>
+    //for password validation
+    function checkpass() 
+    {
+        var pass= document.getElementById("pass").value;
+        var cpass= document.getElementById("cpass").value;
+        if(pass != cpass)
+        {
+            document.getElementById("btn").disabled = true;
+            return false;
+        }
+        else
+        {
+            document.getElementById("btn").disabled = false;
+            return true;
+        }
+    }
+</script>
+  
       <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
       <script src="assets/js/popper.min.js"></script>
       <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
       <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
       <script src="assets/js/script.js"></script>
    </body>
-   <!-- Mirrored from preschool.dreamguystech.com/html-template/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
+   
 </html>
+
+<?php
+  if(isset($_POST['save']))
+  {
+      $fname=$_POST['fname'];
+      $lname=$_POST['lname'];
+      $email=$_POST['email'];
+      $pass=$_POST['pass'];
+
+      $sql="UPDATE admin SET `afname`='$fname', `alname`='$lname', `aemail`='$email', `apass`='$pass' WHERE aemail='$mail'";
+      $result=mysqli_query($conn,$sql);
+      // print_r($result);
+      if($result)
+      {
+        echo "<script>window.location.href='profile.php';</script>";
+        exit;
+      }
+      else{
+          echo "<script>alert('try again! check it');</script>";
+      }
+  }
+  if(isset($_POST['saveimg']))
+  {
+    if($_FILES['img']['name'])
+    {
+      $filename=$_FILES["img"]["name"];
+      $tmpname =$_FILES["img"]["tmp_name"];
+      $folder = "./img/" . $filename;
+      move_uploaded_file($tmpname,$folder);  
+    }
+    else{
+        $folder = $img;
+    }
+    $sql="UPDATE admin SET `image`='$folder' where aemail='$mail'";
+    $result=mysqli_query($conn,$sql);
+    // print_r($result);
+    if($result)
+    {
+      echo "<script>window.location.href='profile.php';</script>";
+      exit;
+    }
+    else{
+        echo "<script>alert('try again! check it');</script>";
+    }
+  }
+?>

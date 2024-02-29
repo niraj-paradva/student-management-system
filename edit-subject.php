@@ -45,7 +45,7 @@ if(isset($_REQUEST['updt']))
     }
     else
     {
-        echo "<script>alert('Not Found');</script>";
+        // echo "<script>alert('Not Found');</script>";
     }
 
 ?>
@@ -136,14 +136,28 @@ if(isset($_REQUEST['updt']))
                       <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Class</label>
+                          <!-- new select function solved by nicxx -->
+                        
                             <select class="form-control" name="subclass">
                                 <option disabled>Select Class</option>
-                                <option>FY SEM 1</option>
-                                <option>FY SEM 2</option>
-                                <option>SY SEM 3</option>
-                                <option>SY SEM 4</option>
-                                <option>TY SEM 5</option>
-                                <option>TY SEM 6</option>
+                                <option <?php if($arr['subclass'] == 'FY SEM 1'){
+                                  echo "selected";
+                                }  ?>>FY SEM 1</option>
+                                <option <?php if($arr['subclass'] == 'FY SEM 2'){
+                                  echo "selected";
+                                }  ?>>FY SEM 2</option>
+                                <option <?php if($arr['subclass'] == 'SY SEM 3'){
+                                  echo "selected";
+                                }  ?>>SY SEM 3</option>
+                                <option <?php if($arr['subclass'] == 'SY SEM 4'){
+                                  echo "selected";
+                                }  ?>>SY SEM 4</option>
+                                <option <?php if($arr['subclass'] == 'TY SEM 5'){
+                                  echo "selected";
+                                }?>>TY SEM 5</option>
+                                <option <?php if($arr['subclass'] == 'TY SEM 6'){
+                                  echo "selected";
+                                }?>>TY SEM 6</option>
                             </select>
                         </div>
                         </div>

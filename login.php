@@ -56,9 +56,9 @@ if(isset($_POST['submit']))
                         <p class="account-subtitle">Access to our dashboard</p>
                         <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
-                              <li class="breadcrumb-item active" aria-current="page"><a href="#">Admin</a></li>
-                              <li class="breadcrumb-item"><a href="tlogin.php">Teacher</a></li>
-                              <li class="breadcrumb-item"><a href="slogin.php">Student</a></li>
+                              <li class="breadcrumb-item active" aria-current="page"><a href="login.php">Admin</a></li>
+                              <li class="breadcrumb-item"><a href="teacher/tlogin.php">Teacher</a></li>
+                              <li class="breadcrumb-item"><a href="student/slogin.php">Student</a></li>
                            </ol>
                         </nav>
                         <form action="#" method="POST">
@@ -66,7 +66,7 @@ if(isset($_POST['submit']))
                               <input class="form-control" type="email" placeholder="Email" name="email" required>
                            </div>
                            <div class="form-group">
-                              <input class="form-control" type="text" placeholder="Password" name="password" required>
+                              <input class="form-control" type="password" placeholder="Password" name="password" required>
                            </div>
                            <div class="form-group">
                               <button class="btn btn-primary btn-block" type="submit" name="submit">Login</button>

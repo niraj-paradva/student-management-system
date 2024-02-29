@@ -43,7 +43,7 @@ if(isset($_POST['submit']))
 }
 else
 {
-    echo "<script>alert('NO');</script>";
+    // echo "<script>alert('NO');</script>";
 }
 ?>
 
