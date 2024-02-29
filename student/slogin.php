@@ -26,9 +26,9 @@
                         <p class="account-subtitle">Access to our dashboard</p>
                         <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="login.php">Admin</a></li>
-                              <li class="breadcrumb-item"><a href="tlogin.php">Teacher</a></li>
-                              <li class="breadcrumb-item active" aria-current="page"><a href="#">Student</a></li>
+                              <li class="breadcrumb-item"><a href="../login.php">Admin</a></li>
+                              <li class="breadcrumb-item"><a href="../teacher/tlogin.php">Teacher</a></li>
+                              <li class="breadcrumb-item active" aria-current="page"><a href="slogin.php">Student</a></li>
                            </ol>
                         </nav>
                         <form action="#" method="POST">
@@ -36,7 +36,7 @@
                               <input class="form-control" type="email" placeholder="Email" name="mail" required>
                            </div>
                            <div class="form-group">
-                              <input class="form-control" type="text" placeholder="Password" nmae="password" required>
+                              <input class="form-control" type="password" placeholder="Password" nmae="password" required>
                            </div>
                            <div class="form-group">
                               <button class="btn btn-primary btn-block" type="submit">Login</button>
