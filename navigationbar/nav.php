@@ -7,7 +7,7 @@
                      </li>
                      
                      <li class="submenu active">
-                        <a href="index.php"><i class="fas fa-chart-bar"></i><span>Dashboard</span></a>
+                        <a href="../index.php"><i class="fas fas-chart-bar"></i><span>Dashboard</span></a>
                      </li> 
                      
                      <li class="submenu">

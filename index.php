@@ -34,6 +34,7 @@ else
       <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
       <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
       <link rel="stylesheet" href="assets/css/style.css">
+      
    </head>
    <body>
       <div class="main-wrapper">
@@ -141,9 +142,10 @@ else
                               </div>
                            </div>
                         </div>
-                        <div class="card-body">
+                        <!-- <div class="card-body">
                            <div id="apexcharts-area"></div>
-                        </div>
+                        </div> -->
+                        <div id="donutchart" style="width: 700px; height: 400px;"></div>
                      </div>
                   </div>
                   <div class="col-md-12 col-lg-6">

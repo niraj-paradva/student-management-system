@@ -12,7 +12,7 @@ if(!$conn)
     error_reporting(0);
     die("Could not connect to Database");
 }
-// else 
-//     echo "Connected to Database";
+else 
+    // echo "Connected to Database";
 
 ?>
