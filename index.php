@@ -96,8 +96,16 @@ else
                                  <i class="fas fa-building"></i>
                               </div>
                               <div class="db-info">
-                                 <h3>30+</h3>
-                                 <h6>Department</h6>
+                                 <?php
+                                    require "connection.php";
+                                    $sql="select subname from subject";
+                                    $result=mysqli_query($conn,$sql);
+                                    $count_return=mysqli_num_rows($result);
+                                 ?>
+                                 <h3><?php
+                                    echo $count_return;
+                                 ?></h3>
+                                 <h6>subject</h6>
                               </div>
                            </div>
                         </div>

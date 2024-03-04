@@ -29,16 +29,14 @@ if(isset($_POST['submit']))
     $subcredit = filter_var($subcredit,FILTER_SANITIZE_STRING);
 
     $qry = "INSERT INTO subject values ('$subid','$subname','$subclass','$subcredit')";
-
     $ins = mysqli_query($conn,$qry);
-
     if($ins)
     {
-        echo "INSERTED";
+        header('location:./subjects.php');
     }
     else
     {
-        echo "NOT INSERTED";
+        echo "<script> alert('error! check subject id or other info'); </script>";
     }
 }
 else
@@ -158,6 +156,4 @@ else
 
 
 </body>
-
-<!-- Mirrored from preschool.dreamguystech.com/html-template/add-subject.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:50 GMT -->
 </html>
