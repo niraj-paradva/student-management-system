@@ -66,10 +66,10 @@
         <form action="#" enctype="multipart/form-data" method="post">
         <div class="text-center">
             <img src="<?php echo $img ?>" class="avatar img-circle" alt="avatar">
-            <h6>Upload a different photo...</h6>
+            <h6>Upload photo...</h6>
             
             <input type="file" name="img" class="form-control"><br>
-            <input type="submit" class="btn btn-primary" value="change" id="saveimg" name="saveimg">
+            <input type="submit" class="btn btn-primary" value="Change" id="saveimg" name="saveimg">
           </div>
           </form>
         </div>
@@ -77,7 +77,7 @@
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         
-        <h3>Personal info</h3>
+        <h3 class="mt-3">Personal info</h3>
           
         <form class="form-horizontal" role="form" action="#" method="POST" enctype="multipart/form-data">
           <div class="form-group">
@@ -94,14 +94,14 @@
           </div>
          
           <div class="form-group">
-            <label class="col-lg-8 control-label">Email:  &nbsp<b style="color:red; font-size:10px;">if you change e-mail please re-login on dashboard</b></label>
+            <label class="col-lg-8 control-label">Email:  &nbsp<b style="color:red; font-size:10px;">If you change e-mail please re-login on dashboard</b></label>
             <div class="col-lg-8">
               <input class="form-control" type="text" value="<?php echo $mail ?>" name="email" require>
             </div>
           </div>
           
           <div class="form-group">
-            <label class="col-md-8 control-label">Password: &nbsp<b style="color:red; font-size:10px;">change only you want to change password</b></label>
+            <label class="col-md-8 control-label">Password: &nbsp<b style="color:red; font-size:10px;">Change only you want to change password</b></label>
             <div class="col-md-8">
               <input class="form-control" type="password" value="<?php echo $pass ?>" onKeyUp="checkpass()" name="pass" id="pass" require>
             </div>
