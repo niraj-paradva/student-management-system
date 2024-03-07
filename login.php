@@ -30,7 +30,6 @@ if(isset($_POST['submit']))
 
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -68,6 +67,12 @@ if(isset($_POST['submit']))
                            <div class="form-group">
                               <input class="form-control" type="password" placeholder="Password" name="password" required>
                            </div>
+                           <div class="alert alert-warning alert-dismissible fade show" id="alert" role="alert" style="display:none">
+                                    <strong>opps !</strong> Your gr number not fount contact admin
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                            <div class="form-group">
                               <button class="btn btn-primary btn-block" type="submit" name="submit">Login</button>
                            </div>

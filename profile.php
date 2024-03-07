@@ -168,7 +168,7 @@
       // print_r($result);
       if($result)
       {
-        echo "<script>window.location.href='profile.php';</script>";
+        echo "<script>window.location.href='logout.php';</script>";
         exit;
       }
       else{
@@ -192,8 +192,7 @@
     // print_r($result);
     if($result)
     {
-      echo "<script>window.location.href='profile.php';</script>";
-      exit;
+      echo "<script>window.location.href='./profile.php';</script>";
     }
     else{
         echo "<script>alert('try again! check it');</script>";

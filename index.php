@@ -34,7 +34,39 @@ else
       <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
       <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
       <link rel="stylesheet" href="assets/css/style.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <?php
       
+         $sql="SELECT * FROM subject";
+         $result=mysqli_query($conn,$sql);
+      ?>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['name', 'credit'],
+          <?php
+            while($data=mysqli_fetch_assoc($result))
+            {
+                echo "['".$data['subname']."',".$data['subcredit']."],";
+            }
+          ?>
+        ]);
+
+        var options = {
+          chart: {
+            title: 'all subject credit',
+            subtitle: 'name and compare credit',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
    </head>
    <body>
       <div class="main-wrapper">
@@ -150,10 +182,10 @@ else
                               </div>
                            </div>
                         </div>
-                        <!-- <div class="card-body">
-                           <div id="apexcharts-area"></div>
-                        </div> -->
-                        <div id="donutchart" style="width: 700px; height: 400px;"></div>
+                        <div class="card-body">
+                        <div id="columnchart_material" style="width: 530px; height: 400px;"></div>
+                        </div>
+                        
                      </div>
                   </div>
                   <div class="col-md-12 col-lg-6">
